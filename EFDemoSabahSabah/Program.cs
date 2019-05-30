@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFDemoSabahSabah.Contex;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,17 @@ namespace EFDemoSabahSabah
     {
         static void Main(string[] args)
         {
+            using (var con = new CustomerContext())
+            {
+                con.Customers.Add(new Entity.Customer() { Name = "abc" });
+                con.SaveChanges();
+                foreach (var item in con.Customers)
+                {
+                    Console.WriteLine($"{item.Name}");
+                }
+            }
+
+
         }
     }
 }
