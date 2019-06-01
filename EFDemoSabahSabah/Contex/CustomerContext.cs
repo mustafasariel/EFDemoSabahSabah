@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EFDemoSabahSabah.Contex
 {
-    class CustomerContext:DbContext
+    class MyContext:DbContext
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Note> Notes { get; set; }
