@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A5CC451-9932-4F91-A3C6-6BF7A20DA459}</ProjectGuid>
+    <ProjectGuid>{A9555782-0DFA-482C-A07B-952DEE7B259F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EFDemoSabahSabah</RootNamespace>
-    <AssemblyName>EFDemoSabahSabah</AssemblyName>
+    <RootNamespace>NortwindDenemeleri</RootNamespace>
+    <AssemblyName>NortwindDenemeleri</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -53,9 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contex\CustomerContext.cs" />
-    <Compile Include="Entity\Customer.cs" />
-    <Compile Include="Entity\Note.cs" />
+    <Compile Include="CodeFirstNorthwind.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +61,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
