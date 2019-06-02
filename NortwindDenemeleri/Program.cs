@@ -14,8 +14,26 @@ namespace NortwindDenemeleri
         {
 
             //fillProduct();
+            ListProductSummary();
+
+            Console.ReadLine();
         }
 
+
+        static void ListProductSummary()
+        {
+            using (var con = new NorthwindContext())
+            {
+                var lst = from p in con.Products
+                          select new { Ad = p.ProductName, Fiyat = p.UnitPrice }; // anonim type
+
+
+                foreach (var item in lst)
+                {
+                    Console.WriteLine($"{item.Ad} - {item.Fiyat}");
+                }
+            }
+        }
         static void fillProduct()
         {
             using (var contex=new NorthwindContext())

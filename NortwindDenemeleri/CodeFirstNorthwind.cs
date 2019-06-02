@@ -19,9 +19,6 @@ namespace CodeFirstNorthwind
             //// Create Northwind if it doesn't already exist.
             //this.Database.CreateIfNotExists();
         }
-
-      
-
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -131,5 +128,6 @@ namespace CodeFirstNorthwind
         // public Category Category  { get ;  set;}
         public ICollection<OrderDetail> Order_Detail { get; set; }
         // public Supplier Suppliers { get ;  set;}
+
     }
 }
