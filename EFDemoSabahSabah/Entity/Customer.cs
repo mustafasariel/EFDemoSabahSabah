@@ -13,6 +13,11 @@ namespace EFDemoSabahSabah.Entity
 
         public List<Note> Notes { get; set; }
 
+
+        public Customer()
+        {
+            Notes = new List<Note>();
+        }
         public override string ToString()
         {
             return $"{Id} {Name} ";
