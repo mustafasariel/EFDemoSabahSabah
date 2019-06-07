@@ -14,18 +14,107 @@ namespace NortwindDenemeleri
         {
 
             //fillProduct();
-            ListProductSummary();
+            //ListProductSummary();
+
+            //groupFonk1();
+            // groupFonk2();
+            //groupOrderByDescending();
+            ListProductSummaryOrderby();
+
 
             Console.ReadLine();
         }
 
+        static void groupOrderByDescending()
+        {
+            using (var con = new NorthwindContext())
+            {
+                var result = from p in con.Products
+                             group p by new { p.ReorderLevel, p.Discontinued }
+                             into urun
+                             orderby urun.Key.ReorderLevel descending
+                             select new { Level = urun.Key.ReorderLevel, urun.Key.Discontinued, Adet = urun.Count() };
 
+                foreach (var item in result)
+                {
+                    Console.WriteLine($"{item.Level},{item.Discontinued} ,{item.Adet}");
+                }
+            }
+        }
+
+        static void groupOrderBy()
+        {
+            using (var con = new NorthwindContext())
+            {
+                var result = from p in con.Products
+                             group p by new { p.ReorderLevel, p.Discontinued }
+                             into urun
+                             orderby urun.Key.ReorderLevel ascending
+                             select new { Level = urun.Key.ReorderLevel, urun.Key.Discontinued, Adet = urun.Count() };
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine($"{item.Level},{item.Discontinued} ,{item.Adet}");
+                }
+            }
+        }
+        static void groupFonk2()
+        {
+            using (var con = new NorthwindContext())
+            {
+                var result = from p in con.Products
+                             group p by new { p.ReorderLevel, p.Discontinued }
+                             into urun
+                             orderby urun.Key.ReorderLevel
+                             select new { Level = urun.Key.ReorderLevel, urun.Key.Discontinued, Adet = urun.Count() };
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine($"{item.Level},{item.Discontinued} ,{item.Adet}");
+                }
+            }
+        }
+
+        static void groupFonk1()
+        {
+            using (var con = new NorthwindContext())
+            {
+                var result = from p in con.Products
+                             group p by p.ReorderLevel
+                             into grup
+                             select new { Level = grup.Key, Adet = grup.Count() };
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine($"{item.Level}, {item.Adet}");
+                }
+            }
+        }
         static void ListProductSummary()
         {
             using (var con = new NorthwindContext())
             {
                 var lst = from p in con.Products
                           select new { Ad = p.ProductName, Fiyat = p.UnitPrice }; // anonim type
+
+
+                foreach (var item in lst)
+                {
+                    Console.WriteLine($"{item.Ad} - {item.Fiyat}");
+                }
+            }
+        }
+
+        static void ListProductSummaryOrderby()
+        {
+            using (var con = new NorthwindContext())
+            {
+                var lst = from p in con.Products
+                          orderby p.UnitPrice
+                          select new { Ad = p.ProductName, Fiyat = p.UnitPrice };
+                          
+                         
+                          // anonim type
 
 
                 foreach (var item in lst)
