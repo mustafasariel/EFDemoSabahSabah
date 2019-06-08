@@ -22,8 +22,6 @@ namespace Demo4
                     CreateBy = "msariel",
                     UpdateBy = "msariel",
                     UpdateDate = DateTime.Now
-                    
-                    
 
                 });
 
@@ -31,7 +29,7 @@ namespace Demo4
 
                 foreach (var item in c.Categoris)
                 {
-                    Console.WriteLine(item.Name);
+                    Console.WriteLine(item);
                 }
             }
         }

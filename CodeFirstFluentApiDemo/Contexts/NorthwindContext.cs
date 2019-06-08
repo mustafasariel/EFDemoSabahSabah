@@ -12,7 +12,7 @@ namespace CodeFirstFluentApiDemo.Contexts
 {
     public class NorthwindContext : DbContext
     {
-        public NorthwindContext() : base("Name=MyContext")
+        public NorthwindContext() : base("Name=myContext")
         {
             Database.SetInitializer<NorthwindContext>(new DropCreateDatabaseAlways<NorthwindContext>());
         }

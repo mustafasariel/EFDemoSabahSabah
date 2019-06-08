@@ -18,11 +18,18 @@ namespace Demo4.Entity
 
         public List<CategoryProduct> CategoryProducts { get; set; }
 
+        public string ImageUrl { get; set; }
+
 
         public Category()
         {
             CreateDate = DateTime.Now;
             CategoryProducts = new List<CategoryProduct>();
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} {CreateDate.ToLongTimeString()}";
         }
     }
 }

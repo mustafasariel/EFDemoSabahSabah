@@ -12,9 +12,17 @@ namespace Demo4.Context
     {
         public MyContext() : base("name=myContext")
         {
-
+            Database.SetInitializer(new DropCreateDatabaseAlways<MyContext>());
         }
         public DbSet<Category> Categoris { get; set; }
         public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new Entity.Maping.CategoryMap());
+            modelBuilder.Configurations.Add(new Entity.Maping.ProductMap());
+
+          
+        }
     }
 }

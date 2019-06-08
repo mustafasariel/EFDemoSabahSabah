@@ -11,10 +11,10 @@ namespace EFDemoSabahSabah
     {
         static void Main(string[] args)
         {
-            //dataEntry();
+            dataEntry1();
 
             // list();
-            // dataEntryNotes();
+             dataEntryNotes();
 
             //using (var con = new MyContext())
             //{
@@ -34,7 +34,7 @@ namespace EFDemoSabahSabah
            // list2();
      
 
-            updateCustomer(8);
+           // updateCustomer(8);
             Console.ReadLine();
 
         }

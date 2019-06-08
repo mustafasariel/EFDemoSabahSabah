@@ -12,7 +12,7 @@ namespace EfDemo3.EF
     {
         // Use the constructor to target a specific named connection string
         public MyContext()
-            : base("name=eticaret")
+            : base("name=myContex")
         {
             // Disable proxy creation as this messes up the data service.
             //this.Configuration.ProxyCreationEnabled = false;

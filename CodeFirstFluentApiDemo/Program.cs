@@ -9,11 +9,14 @@ namespace CodeFirstFluentApiDemo
 {
     class Program
     {
+        /// <summary>
+        /// fixed
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             using (var c =new NorthwindContext())
             {
-
 
                 c.Customers.Add(new Entities.Customer
                 {

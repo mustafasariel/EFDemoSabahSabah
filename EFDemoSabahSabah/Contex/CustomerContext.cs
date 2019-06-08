@@ -10,6 +10,10 @@ namespace EFDemoSabahSabah.Contex
 {
     class MyContext:DbContext
     {
+        public MyContext():base("name=myContext")
+        {
+
+        }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Note> Notes { get; set; }
     }

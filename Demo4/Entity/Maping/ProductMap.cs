@@ -13,9 +13,12 @@ namespace Demo4.Entity.Maping
         {
             this.HasKey(t => t.Id);
 
+            this.Property(t => t.CreateBy).HasMaxLength(40).IsUnicode(false);
+            this.Property(t => t.UpdateBy).HasMaxLength(40).IsUnicode(false);
+
             this.ToTable("Products");
 
-            this.Property(t => t.Name).HasColumnName("Name");
+            this.Property(t => t.Name).HasColumnName("Name").IsUnicode(false);
         }
     }
 }
