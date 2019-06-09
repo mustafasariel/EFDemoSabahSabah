@@ -11,9 +11,11 @@ namespace Demo5.EF
     public class MyContext :DbContext
     {
 
-        public MyContext():base("name=myContext")
+        public MyContext() : base("name=myContext")
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<MyContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<MyContext>());
+           // Database.SetInitializer(new MyContextInitializer());
+
         }
 
         public DbSet<Category> Categories { get; set; }

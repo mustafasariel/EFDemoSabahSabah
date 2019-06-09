@@ -19,8 +19,6 @@ namespace Demo5.EF.Mapping
            
             this.ToTable("msa.Products");
 
-
-
         }
     }
 }
